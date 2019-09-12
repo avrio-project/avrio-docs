@@ -14,6 +14,8 @@ Given a transaction hash: returns a transaction in JSON format.
 NOTE: this will only search the mempool.
 To query for a confirmed transaction use the json rpc command.
 
+`GET /rest/account/txns/<CHAINPUBLICKEY>`
+
 #### Blocks
 `GET /rest/block/<BLOCK-HASH>.<bin|hex|json>`
 `GET /rest/block/notxdetails/<BLOCK-HASH>`
@@ -48,7 +50,7 @@ Only supports JSON as output format.
 * verificationprogress : (numeric) estimate of verification progress [0..1]
 * merkleroot : (strng) a merkle root of the chain
 
-#### get account balance
+#### Balance
 `GET /rest/getbalance/<account>`
 `GET /rest/getbalancelist/[COUNT]`
 The getbalance command allows querying of the balance of a account, getbalance list returns top COUNT balances from the list of balances in json format (publickkey : balance)
