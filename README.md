@@ -1,2 +1,2 @@
-# avrio-docs
+# Avrio Docs
 The official documentation for avrio
