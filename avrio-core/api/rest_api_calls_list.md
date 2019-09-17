@@ -87,9 +87,54 @@ Returns various information about the TX mempool. Only supports JSON as output f
 * mempoolmingas : \(numeric\) minimum gas for tx to be accepted
 * mempoolmingasprice : \(numeric\) minimum gas price for a node to accept a tx.
 
-`GET /rest/mempool/contents.json`
+`GET /rest/mempool/contents`
 
-Returns pending \(confirmed but waitng for a recive block\) transactions in the TX mempool. Only supports JSON as output format.
+Returns pending \(confirmed but waiting for a revive block\) transactions in the TX mempool. Only supports JSON as output format.
+
+### Usernames
+
+`GET /rest/usernames/[PUBLICKEY]`
+
+Returns the current list of registered usernames mapped to public keys
+
+```text
+$ curl localhost:port/rest/usernames/
+[
+        {
+            "publickey": "b2cdfd7b89def827ff8af7cd9bff7627ff72e5e8b0f71210f92ea7a4000c5d75",
+            "username": "avrio-donations"
+        },
+        {
+            "publickey": "gda4kr5y4gw4hf4we7b89d5h5827ff8af7cd9bff7627ff72e5e8b0f71210f92ea7a4000c5d75",
+            "username": "avrioex"
+        },
+        {
+              ...
+         }
+]
+```
+
+ Or If you wish to get the publickey for a username
+
+`GET /rest/username/<USERNAME>`
+
+```text
+$ curl localhost:port/rest/usernames/avrio-donations
+   "publicKey" : "b2cdfd7b89def827ff8af7cd9bff7627ff72e5e8b0f71210f92ea7a4000c5d75",
+   "username" : "avrio-donations",
+}
+```
+
+or with a provided publickey...
+
+```text
+$ curl localhost:port/rest/usernames/b2cdfd7b89def827ff8af7cd9bff7627ff72e5e8b0f71210f92ea7a4000c5d75
+   "publicKey" : "b2cdfd7b89def827ff8af7cd9bff7627ff72e5e8b0f71210f92ea7a4000c5d75",
+   "username" : "avrio-donations",
+}
+```
+
+## PLEASE NOTE: The sample response data used in this documentation page is random and is NOT correct, please do NOT use it as real data
 
 ## Contributors:
 
